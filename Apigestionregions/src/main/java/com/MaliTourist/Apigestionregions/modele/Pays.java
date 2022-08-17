@@ -15,5 +15,6 @@ public class Pays {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_pays;
-    private String nom_pays;
+    @Column(unique = true)
+    private String nom;
 }

@@ -29,4 +29,14 @@ public class PopulationServiceImpl implements PopulationService{
         populationRepository.deleteById(id_population);
         return "Population supprimer avec succes !";
     }
+
+    @Override
+    public Population controlerpop(int idpop) {
+        return populationRepository.findByIdpop(idpop);
+    }
+
+    @Override
+    public Iterable<Object[]> popFINDALLREGIONWITH_NONMBRE_HABITANT_AND_ANNEE() {
+        return populationRepository.FINDALLREGIONWITH_NONMBRE_HABITANT_AND_ANNEE();
+    }
 }

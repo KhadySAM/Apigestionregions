@@ -27,4 +27,9 @@ public class PaysServiceImpl implements PaysService{
         paysRepository.deleteById(id_pays);
         return "Pays supprimer avec succes !";
     }
+
+    @Override
+    public Pays ChercherPays(String nom_pays) {
+        return paysRepository.findByNom(nom_pays);
+    }
 }

@@ -13,31 +13,38 @@ import java.util.List;
 @RestController
 @RequestMapping("/population")
 @AllArgsConstructor
-@Api(value = "hello", description = "Sample hello world application")
+@Api(value = "POPULATION", description = "ENSEMBLE DES FONCTIONNALITES CONCERNANT POPULATION")
 
 
 public class PopulationController {
 
     private final PopulationService populationService;
 
-    @ApiOperation(value = "Just to test the sample test api of My App Service")
+    @ApiOperation(value = "FONCTIONNALITE D'AJOUT D'UNE POPULATION")
     @PostMapping("/create_population")
     public Population create(@RequestBody Population population) {
 
         return populationService.creer(population);
     }
 
-    @ApiOperation(value = "Just to test the sample test api of My App Service")
+    @ApiOperation(value = "FONCTIONNALITE D'AFFICHAGE D'UNE POPULATION")
     @GetMapping("/read_population")
-    public List<Population> read(){
+    public List<Population> read() {
 
         return populationService.lire();
     }
 
-    @ApiOperation(value = "Just to test the sample test api of My App Service")
+    @ApiOperation(value = "FONCTIONNALITE DE SUPPRESSION D'UNE POPULATION")
     @DeleteMapping("/delete_population/{id_population}")
     public String delete(@PathVariable Integer id_population) {
+
         return populationService.supprimer(id_population);
     }
 
+    @ApiOperation(value = "FONCTIONNALITE D'AFFICHAGE DES POPULATIONS D'UNE ANNEE DONNEE")
+    @GetMapping("/population/annee")
+    public Object readrgps() {
+        return populationService.popFINDALLREGIONWITH_NONMBRE_HABITANT_AND_ANNEE();
+
+    }
 }

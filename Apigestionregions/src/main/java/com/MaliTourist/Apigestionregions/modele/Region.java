@@ -14,8 +14,9 @@ import javax.persistence.*;
 public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_rg;
+    private Integer idrg;
     private String code_rg;
+    @Column(unique = true)
     private String nom_rg;
     private String d_act;
     private String superficie;

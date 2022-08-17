@@ -11,4 +11,6 @@ public interface PaysService {
     List<Pays> lire();
 
     String supprimer(Integer id_pays);
+
+    Pays ChercherPays(String nom_pays);
 }

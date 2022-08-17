@@ -15,12 +15,12 @@ import java.util.Date;
 public class Population {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_population;
+    private Integer idpop;
     private Long nbre_population;
     private Date annee;
 
     @ManyToOne
-    @JoinColumn(name = "id_rg")
-    private Population id_rg;
+    @JoinColumn(name = "idrg")
+    private Population idrg;
 
 }
